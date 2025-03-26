@@ -1,19 +1,13 @@
-package hw3;  // Kyle Eberhart CSC300 MW 1150-120
+package Connect4;
 
 public class Board {
-	// TODO
-	// Add whatever private fields you need here.
-	// Remember, only variables of type int, char, boolean, and 1D and 2D arrays
-	// of these types are allowed.
+	
 	private char[][] board;
 	private char playerOne = 'X';
 	private char playerTwo = 'O';
 	private char currentPlayer = playerOne;
 	
-	//
-	// As always, you may also add private helper methods to the class.  That will
-	// likely be very useful on this assignment.
-	
+	// Function changes the player currently playing the game when called.
 	public void togglePlayer() {
 	    // Switch between playerOne (X) and playerTwo (O)
 	    if (currentPlayer == playerOne) {
@@ -23,7 +17,7 @@ public class Board {
 	    }
 	}
 
-	
+	// Ensures player move is valid.
 	private boolean checkDirection(int row, int col, int rowDir, int colDir, char player) {
 	    for (int i = 0; i < 4; i++) {
 	        int newRow = row + i * rowDir;
@@ -38,7 +32,7 @@ public class Board {
 	/**
 	 * Constructs a new empty connect 4 game board with player X being the first player
 	 * and player 'O' being the second player.
-	 * Use 2D array to create board, initialize playerOne (X) , then playerTwo (O). 
+	 * Uses 2D array to create board, initialize playerOne (X) , then playerTwo (O). 
 	 */
 	public Board() {
 		board = new char [6][7];
@@ -121,8 +115,7 @@ public class Board {
 	}
 
 	/**
-	 * Construct a string that depicts the sate of the game.
-	 * (See the writeup for what that string should look like.)
+	 * Constructs a string that depicts the sate of the game.
 	 * 
 	 * @return a string depicting the game board
 	 */
